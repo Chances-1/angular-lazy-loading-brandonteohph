@@ -1,0 +1,18 @@
+<div style="width:40%; height: 40%;">
+    <!-- load from import -->
+    <button (click)="loadHarder()">Load</button>
+    <div *ngIf="loaded">
+        <ng-container *ngComponentOutlet="myComponent"></ng-container>
+    </div>
+
+    <!-- load directly from component (can be used with ngIf for dynamic loading of different pages) -->
+    <app-lazy-component></app-lazy-component>
+
+    <!-- ngIf example -->
+    <button (click)="toggleLazyHarder()">Toggle Component</button>
+    <div style="display: inline-flex; flex-direction: row;">
+        <app-lazy-component *ngIf="toggleLazy"></app-lazy-component>
+        <app-harder-component *ngIf="toggleHarder"></app-harder-component>
+    </div>
+</div>
+
